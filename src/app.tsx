@@ -1,29 +1,29 @@
-import { Text, Window, hot, View } from "@nodegui/react-nodegui";
+import { Window, hot, View } from "@nodegui/react-nodegui";
 import React from "react";
-import { QIcon } from "@nodegui/nodegui";
-import { StepOne } from "./components/stepone";
-import { StepTwo } from "./components/steptwo";
+import { MemoryRouter } from "react-router";
+import AppRoutes from './routes';
+import { QFontDatabase, QIcon } from "@nodegui/nodegui";
 import nodeguiIcon from "../assets/nodegui.jpg";
 
 const minSize = { width: 500, height: 520 };
 const winIcon = new QIcon(nodeguiIcon);
+QFontDatabase.addApplicationFont('assets/AlegreyaSans/AlegreyaSans-Black.ttf')
+
 class App extends React.Component {
   render() {
     return (
-      <Window
-        windowIcon={winIcon}
-        windowTitle="Hello 👋🏽"
-        minSize={minSize}
-        styleSheet={styleSheet}
-      >
-        <View style={containerStyle}>
-          <Text id="welcome-text">Welcome to NodeGui 🐕</Text>
-          <Text id="step-1">1. Play around</Text>
-          <StepOne />
-          <Text id="step-2">2. Debug</Text>
-          <StepTwo />
-        </View>
-      </Window>
+      <MemoryRouter>
+        <Window
+          windowIcon={winIcon}
+          windowTitle="Hello 👋🏽"
+          minSize={minSize}
+          styleSheet={styleSheet}
+        >
+          <View style={containerStyle}>
+            <AppRoutes />
+          </View>
+        </Window>
+      </MemoryRouter>
     );
   }
 }
@@ -33,11 +33,16 @@ const containerStyle = `
 `;
 
 const styleSheet = `
+  * {
+    font-family: 'AlegreyaSans-Black';
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+  }
+
   #welcome-text {
     font-size: 24px;
     padding-top: 20px;
     qproperty-alignment: 'AlignHCenter';
-    font-family: 'sans-serif';
   }
 
   #step-1, #step-2 {
