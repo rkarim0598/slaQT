@@ -1,8 +1,10 @@
-import { Window, hot, View } from "@nodegui/react-nodegui";
 import React from "react";
-import { MemoryRouter } from "react-router";
-import AppRoutes from './routes';
+import { Window, hot, View } from "@nodegui/react-nodegui";
 import { QFontDatabase, QIcon } from "@nodegui/nodegui";
+import { MemoryRouter } from "react-router";
+
+import AppRoutes from './routes';
+import styleSheet from './styles/styleSheet';
 import nodeguiIcon from "../assets/nodegui.jpg";
 
 const minSize = { width: 500, height: 520 };
@@ -29,27 +31,8 @@ class App extends React.Component {
 }
 
 const containerStyle = `
-  flex: 1; 
-`;
-
-const styleSheet = `
-  * {
-    font-family: 'AlegreyaSans-Black';
-    background-color: rgb(50, 50, 50);
-    color: rgb(255, 255, 255);
-  }
-
-  #welcome-text {
-    font-size: 24px;
-    padding-top: 20px;
-    qproperty-alignment: 'AlignHCenter';
-  }
-
-  #step-1, #step-2 {
-    font-size: 18px;
-    padding-top: 10px;
-    padding-horizontal: 20px;
-  }
+  flex: 1;
+  background-color: rgb(40, 40, 40);
 `;
 
 export default hot(App);
