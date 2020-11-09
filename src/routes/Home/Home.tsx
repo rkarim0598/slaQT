@@ -1,7 +1,8 @@
-import { Text, View, Button, useEventHandler } from "@nodegui/react-nodegui";
+import { Text, View, useEventHandler } from "@nodegui/react-nodegui";
 import { QPushButtonSignals } from "@nodegui/nodegui";
 import { useHistory } from 'react-router';
-
+import Button from '../../components/Button';
+import styleSheet from './styles';
 import React from "react";
 
 export default function Login(props: any) {
@@ -23,31 +24,23 @@ export default function Login(props: any) {
     )
 
     return (
-        <View id="login-container">
+        <View id="home-container" styleSheet={styleSheet}>
             <View id="welcome-container">
                 <Text id="welcome-text">Welcome to SlaQT!</Text>
             </View>
             <View id="button-container">
                 <Button
-                    style={styles.signInButton}
+                    id={'sign-in-button'}
                     on={signIn}
                     text={'Sign In'}
                 />
                 <Button
-                    style={styles.createButton}
+                    flat={true}
+                    id={'create-button'}
                     on={createAccount}
                     text={'Create Account'}
                 />
             </View>
         </View>
     )
-}
-
-const styles = {
-    signInButton: `
-        background-color: rgb(0, 80, 0);
-    `,
-    createButton: `
-        background-color: rgb(0, 0, 80);
-    `
 }

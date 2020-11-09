@@ -17,7 +17,7 @@ class App extends React.Component {
       <MemoryRouter>
         <Window
           windowIcon={winIcon}
-          windowTitle="Hello 👋🏽"
+          windowTitle="SlaQt"
           minSize={minSize}
           styleSheet={styleSheet}
         >
@@ -32,6 +32,8 @@ class App extends React.Component {
 
 const containerStyle = `
   flex: 1;
+  height: '100%';
+  width: '100%';
   background-color: rgb(40, 40, 40);
 `;
 

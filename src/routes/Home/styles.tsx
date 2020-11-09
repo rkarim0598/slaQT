@@ -1,8 +1,7 @@
 const styles = `
-    #login-container {
+    #home-container {
         width: '100%';
         height: '100%';
-        display: flex;
         flex: 1;
         align-items: 'center';
     }
@@ -32,7 +31,26 @@ const styles = `
 
     #button-container QPushButton {
         width: '100%';
-        padding: 20px;
+        height: 80;
+    }
+
+    #sign-in-button {
+        background-color: rgb(0, 80, 0);
+        border-style: solid;
+        margin-bottom: 5px;
+    }
+
+    #sign-in-button:pressed {
+        background-color: rgba(0, 80, 0, 0.5);
+    }
+
+    #create-button {
+        background-color: rgb(0, 0, 80);
+        border-style: solid;
+    }
+
+    #create-button:pressed {
+        background-color: rgba(0, 0, 80, 0.5);
     }
 `;
 
